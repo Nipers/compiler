@@ -1,15 +1,43 @@
+// 祖传 lex
 lexer grammar CommonLex;
 
+
 // 关键字
-Int: 'int';
-Return: 'return';
-If: 'if';
-Else: 'else';
-For: 'for';
-Do: 'do';
-While: 'while';
-Break: 'break';
-Continue: 'continue';
+Int
+    : 'int'
+    ;
+
+Return
+    : 'return'
+    ;
+
+If
+    : 'if'
+    ;
+
+Else
+    : 'else'
+    ;
+
+For
+    : 'for'
+    ;
+
+Do
+    : 'do'
+    ;
+
+While
+    : 'while'
+    ;
+
+Break
+    : 'break'
+    ;
+
+Continue
+    : 'continue'
+    ;
 
 
 // 标点、操作符
@@ -32,7 +60,7 @@ Punctuator
     | Comma
     | Semicolon
     ;
-//运算符
+
 Plus : '+' ;
 Minus : '-' ;
 Asterisk : '*' ;
@@ -74,9 +102,18 @@ Operator
 
 // 其他
 
-Integer: Digit+;
-Whitespace: [ \t\n\r]+ -> skip;
-Ident: IdentLead WordChar*;
+Integer
+    : Digit+
+    ;
+
+Whitespace
+    : [ \t\n\r]+ -> skip
+    ;
+
+Ident
+    : IdentLead WordChar*
+    ;
+
 fragment IdentLead: [a-zA-Z_];
 fragment WordChar: [0-9a-zA-Z_];
 fragment Digit: [0-9];
